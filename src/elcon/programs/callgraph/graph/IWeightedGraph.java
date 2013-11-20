@@ -2,6 +2,8 @@ package elcon.programs.callgraph.graph;
 
 import java.util.List;
 
+import elcon.programs.callgraph.graph.edges.WeightedEdge;
+
 public interface IWeightedGraph<N, W> extends Iterable<N> {
 
 	public void addNode(N node);
@@ -32,9 +34,9 @@ public interface IWeightedGraph<N, W> extends Iterable<N> {
 	
 	public List<N> getNodes();
 	
-	public List<WeightedEdge<N, W>> edgesFrom(N from);
+	public List<WeightedEdge<N, W>> edgesFrom(N... from);
 	
-	public List<WeightedEdge<N, W>> edgesTo(N to);
+	public List<WeightedEdge<N, W>> edgesTo(N... to);
 	
 	public List<WeightedEdge<N, W>> edgesBetween(N from, N to);
 

@@ -1,16 +1,23 @@
-package elcon.programs.callgraph.graph;
-
-import elcon.programs.callgraph.graph.edges.Edge;
+package elcon.programs.callgraph.graph.edges;
 
 public class WeightedEdge<N, W> extends Edge<N> {
 
 	public W weight;
+	private String label;
 	
 	public WeightedEdge(N from, N to, W weight) {
 		super(from, to);
 		this.weight = weight;
 	}
 
+	public String getLabel() {
+		return label;
+	}
+	
+	public void setLabel(String label) {
+		this.label = label;
+	}
+	
 	@Override
 	public boolean equals(Object object) {
 		if(!(object instanceof WeightedEdge<?, ?>)) {

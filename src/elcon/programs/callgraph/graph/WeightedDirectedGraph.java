@@ -1,5 +1,7 @@
 package elcon.programs.callgraph.graph;
 
+import elcon.programs.callgraph.graph.edges.WeightedEdge;
+
 public class WeightedDirectedGraph<N, W> extends WeightedGraph<N, W> {
 
 	@Override
