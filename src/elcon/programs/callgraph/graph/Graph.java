@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import elcon.programs.callgraph.graph.edges.Edge;
+
 public class Graph<N> implements IGraph<N> {
 
 	public HashMap<N, ArrayList<Edge<N>>> nodes = new HashMap<N, ArrayList<Edge<N>>>();
@@ -139,6 +141,20 @@ public class Graph<N> implements IGraph<N> {
 							list.add(edge);
 						}
 					}
+				}
+			}
+		}
+		return list;
+	}
+	
+	@Override
+	public List<Edge<N>> edgesBetween(N from, N to) {
+		ArrayList<Edge<N>> list = new ArrayList<Edge<N>>();
+		if(containsNode(from)) {
+			List<Edge<N>> edgesFrom = edgesFrom(from);
+			for(Edge<N> edge : edgesFrom) {
+				if(edge.to.equals(to)) {
+					list.add(edge);
 				}
 			}
 		}

@@ -1,13 +1,22 @@
-package elcon.programs.callgraph.graph;
+package elcon.programs.callgraph.graph.edges;
 
 public class Edge<N> {
 
 	public N from;
 	public N to;
+	private String label;
 	
 	public Edge(N from, N to) {
 		this.from = from;
 		this.to = to;
+	}
+	
+	public String getLabel() {
+		return label;
+	}
+	
+	public void setLabel(String label) {
+		this.label = label;
 	}
 	
 	@Override

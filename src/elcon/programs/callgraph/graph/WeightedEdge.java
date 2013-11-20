@@ -1,5 +1,7 @@
 package elcon.programs.callgraph.graph;
 
+import elcon.programs.callgraph.graph.edges.Edge;
+
 public class WeightedEdge<N, W> extends Edge<N> {
 
 	public W weight;

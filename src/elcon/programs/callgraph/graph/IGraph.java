@@ -2,6 +2,8 @@ package elcon.programs.callgraph.graph;
 
 import java.util.List;
 
+import elcon.programs.callgraph.graph.edges.Edge;
+
 public interface IGraph<N> extends Iterable<N> {
 
 	public void addNode(N node);
@@ -31,6 +33,8 @@ public interface IGraph<N> extends Iterable<N> {
 	public List<Edge<N>> edgesFrom(N from);
 	
 	public List<Edge<N>> edgesTo(N to);
+	
+	public List<Edge<N>> edgesBetween(N to, N from);
 
 	public int size();
 
